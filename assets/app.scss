@@ -1,0 +1,45 @@
+body{
+  .mycontainer{
+    background-color: black;
+
+  }
+  .myblue{
+    color: white;
+    background-color:blue;
+  }
+  .myform{
+    text-align: center;
+    background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    div{
+      font-size: 1.5em;
+      margin: 20px;
+      input{
+        font-size: 1.5em;
+      }
+
+    }
+
+    .mylabel{
+      color: blue;
+      font-weight: bold;
+    }
+  }
+  .dynamic{
+    height: 200px;
+    background-color: cyan;
+    margin:10%;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+  button {
+    width: 20%;
+    height: 50px;
+    font-weight: bolder;
+    &:hover{
+      background-color: red;
+      color: white;
+    }
+  }
+}

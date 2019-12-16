@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="mycontainer">
+    <form action="" onsubmit="return submitform()" class="myform" id="theform">
+        <div class="section1">
+            <label >Name</label>
+            <input type="text" placeholder="name" id="input1"> <label class="mylabel" id="labelforinput1"></label>
+        </div>
+        <div id="section2">
+            <label >Phone</label>
+            <input type="text" placeholder="phone" id="input2"> <label  class="mylabel" id="labelforinput2"></label>
+        </div>
+        <div>
+            <label >Email</label>
+            <input type="text" placeholder="email" id="input3"> <label  class="mylabel" id="labelforinput3"></label>
+        </div>
+        <div>
+            <button onclick="buttonclick()" >
+                SUBMIT
+            </button>
+            <label id="button_info"></label>
+        </div>
+    </form>
+    <button id="mybutton" >
+        click to change form color
+    </button>
+</div>'
+<div>
+    Custom events
+    <div id="div1">
+        <label id="mylabel">Hello</label>
+        <button id="customtrigger">Change div color</button>
+    </div>
+</div>
+
+<div class="dynamic">
+    Dynamic Typing
+    <div id="">
+        <input type="button" value="Click to simulate values of a" onclick="updateval()">
+    </div>
+</div>
+</body>
+<script>
+    (function() {
+        alert("javascript ready");
+        const labelforinput1=document.getElementById("labelforinput1");
+        const inp1 =document.getElementById("input1");
+        inp1.onfocus = function () {
+            labelforinput1.innerText="focused on input 1";
+        };
+        inp1.onblur = function () {
+            labelforinput1.innerText="";
+        };
+
+        const labelforinput2=document.getElementById("labelforinput2");
+        const inp2 =document.getElementById("input2");
+        inp2.onfocus = function () {
+            labelforinput2.innerText="focused on input 2";
+        };
+        inp2.onblur = function () {
+            labelforinput2.innerText="";
+        };
+        const labelforinput3=document.getElementById("labelforinput3");
+        const inp3 =document.getElementById("input3");
+        inp3.onfocus = function () {
+            labelforinput3.innerText="focused on input 3";
+        };
+        inp3.onblur = function () {
+            labelforinput3.innerText="";
+        };
+        inp3.onkeydown = function () {
+            labelforinput3.innerText="input 3 Key Down";
+        };
+        inp3.onkeyup = function () {
+            labelforinput3.innerText="input 3 Key up";
+        };
+        myform=document.getElementById("theform");
+        myform.on
+        mybutton=document.getElementById("mybutton");
+        var iscolor1=false;
+        mybutton.onclick=function () {
+            alert("Color button clicked");
+            if(!iscolor1)
+                myform.style.backgroundColor="cyan";
+            else
+                myform.style.backgroundColor="white";
+            iscolor1=!iscolor1;
+        }
+
+
+        myp= document.getElementById('div1');
+        myp.addEventListener('madeBlue', function (myp) {
+            alert("Color changed")
+        }, false);
+
+        var makeBlue = function (elem) {
+            elem.classList.add('myblue');
+            // Create a new event
+            var event = new CustomEvent('madeBlue');
+            // Dispatch the event
+            elem.dispatchEvent(event);
+        };
+        customtrigger=document.getElementById('customtrigger');
+        customtrigger.onclick=function(){
+            makeBlue(myp);
+        }
+        
+        
+    })();
+
+    function buttonclick() {
+        alert("you clicked a button")
+    }
+    function submitform() {
+        alert("Form Submitting Event")
+    }
+    a = 1;
+
+    function updateval() {
+        alert("please open the console to see the results")
+        var a=1;
+        console.log("a=" +a+ " datatype = "+typeof a);
+        a="Hello"
+        console.log("a=" +a+ " datatype = "+typeof a);
+        a={"years":3,"experience":12}
+        console.log("a=");
+        console.log(a);
+        console.log("datatype = "+typeof a);
+        a=[1,4,5]
+        console.log("a=");
+        console.log(a);
+        console.log("datatype = "+typeof a);
+    }
+
+    var promise = new Promise(function(resolve, reject) {
+        console.log("- - - - - - - - - - Testing JavaScript Promises- - - - - - - - - - - ")
+        console.log("Tyring resolve 44")
+        resolve(44);
+    });
+    promise.then(function(val) {
+        console.log(val);
+        console.log("Testing if 44 is even")
+        if((val%2)==0)
+        return val*3;
+    }).then(function(val) {
+        console.log("if 44 is even it is to be mltiplied by 3");
+        console.log(val); // 3
+    })
+
+</script>
+</html>
